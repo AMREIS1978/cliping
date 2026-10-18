@@ -14,6 +14,8 @@ jobs:
           cache: true
       - name: Create Android platform files
         run: flutter create . --platforms=android --org=pt.clipwatch --project-name=clipwatch
+      - name: Remove generated default test
+        run: rm -f test/widget_test.dart
       - name: Install dependencies
         run: flutter pub get
       - name: Analyse
